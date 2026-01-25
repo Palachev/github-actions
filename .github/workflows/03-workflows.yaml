@@ -15,6 +15,7 @@ jobs:
       runs-on: windows-latest
       steps:
           - name: Show the runner Windows
+            shell: bash
             run: |
               echo " This job is running on a ${{ runner.os }} runner"
               echo " Runner name: ${{ runner.name }}"
