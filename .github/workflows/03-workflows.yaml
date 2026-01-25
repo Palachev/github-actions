@@ -11,3 +11,11 @@ jobs:
                 echo " This job is running on a ${{ runner.os }} runner"
                 echo " Runner name: ${{ runner.name }}"
                 echo "Runner OS: $RUNNER_OS"
+    windows-echo:
+      runs-on: windows-latest
+      steps:
+          - name: Show the runner Windows
+            run: |
+              echo " This job is running on a ${{ runner.os }} runner"
+              echo " Runner name: ${{ runner.name }}"
+              echo "Runner OS: $RUNNER_OS"
