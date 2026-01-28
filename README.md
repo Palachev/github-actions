@@ -1,1 +1,1 @@
-Repository containing all example github actions
+Repository containing all example Github Actions
