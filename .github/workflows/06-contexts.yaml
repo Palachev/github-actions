@@ -1,6 +1,5 @@
 name: 06 - Workflow Contexts
 on: 
-  - push
   - workflow_dispatch
 
 env:
