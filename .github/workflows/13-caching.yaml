@@ -31,12 +31,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version}}
+
+      - name: Dowload dependencies cache
+        uses: actions/cache@v3
+        if: ${{ inputs.use-cache }}
+        id: cache
+        with:
+          path: 13-caching/react-app/node_modules
+          key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
+
       - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+
       - name: Testing
         run: npm run test
         working-directory: 13-caching/react-app
+
       - name: Building
         run: npm run build
+
       - name: Deploying to nonprod
         run: echo "Deploying to nonprod ..."
