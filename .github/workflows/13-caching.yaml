@@ -7,6 +7,16 @@ on:
         description: Whether to use caching
         type: boolean
         default: true
+      node-version:
+        description: Node version
+        type: choice
+        options:
+          - '18.x'
+          - '20.x'
+          - '24.x'
+        default: '24.x'
+
+
 
 jobs:
   build:
@@ -16,11 +26,11 @@ jobs:
         working-directory: 13-caching/react-app
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '24.x'
+          node-version: ${{ inputs.node-version}}
       - name: Install Dependencies
         run: npm ci
       - name: Testing

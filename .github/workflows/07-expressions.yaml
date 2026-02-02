@@ -1,4 +1,4 @@
-name: Expressions Example
+name: 06 Expressions Example
 run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }}
 
 on:
