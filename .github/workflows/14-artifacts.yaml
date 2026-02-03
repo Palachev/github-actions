@@ -30,7 +30,7 @@ jobs:
       - name: Build code
         run: npm run build
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: app
           path: 14-artifacts/react-app/build
@@ -42,7 +42,7 @@ jobs:
     needs: test-build 
     steps:
       - name: Dowloand build artifacts
-        uses: actions/dowloand-artifact@v3
+        uses: actions/dowloand-artifact@v6
         with:
           name: app
           path: build
