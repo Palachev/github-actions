@@ -36,7 +36,7 @@ jobs:
         run: |
           echo "CACHE_KEY=deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}" >> "$GITHUB_OUTPUT"
       - name: Dowload dependencies cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         if: ${{ inputs.use-cache }}
         id: cache
         with:
@@ -63,7 +63,7 @@ jobs:
           node-version: ${{ inputs.node-version}}
 
       - name: Dowload dependencies cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         if: ${{ inputs.use-cache }}
         id: cache
         with:
@@ -93,7 +93,7 @@ jobs:
           node-version: ${{ inputs.node-version}}
 
       - name: Dowload dependencies cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         if: ${{ inputs.use-cache }}
         id: cache
         with:
