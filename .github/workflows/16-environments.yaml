@@ -13,7 +13,6 @@ jobs:
 
   deploy-staging:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.target-env }}
     env:
       my-env-value: ${{ vars.MY_ENV_VALUE || 'default value' }}
     steps:
@@ -37,3 +36,4 @@ jobs:
       - name: Echo vars
         run: |
           echo "Deploy to Production"
+          
